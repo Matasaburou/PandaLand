@@ -29,16 +29,12 @@ function init(){
 	//カメラを作成
 	const camera = new THREE.PerspectiveCamera(75, width / height,1,10000);
 	camera.position.set(0,0,0.1);
-	//camera.lookAt(sphere.position);
 	
 	var controls = new THREE.OrbitControls(camera);
-	controls.autoRotate = true;
-	controls.autoRotateSpeed = 1.5;
-
+	
 	Animation();
 	
 	function Animation(){
-	//	sphere.rotation.y +=0.0001;
 		controls.update();
 		renderer.render(scene,camera);
 		requestAnimationFrame(Animation);
